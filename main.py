@@ -1,4 +1,8 @@
 import requests
+import os
+from json_worker import dict_to_json, json_file_to_dict
+
+
 
 films = ['Spider-man: No way to home', 'Crazy Stupid Love.',
          'Die Hard',
@@ -19,11 +23,9 @@ def get_film_id(query="Die Hard"):
     }
     response = requests.request("GET", url_movie_by_title, headers=headers)
     respons_dict = response.json()
-    if respons_dict['results']:
-        for film in respons_dict['results']:
-            print(film['imdb_id'], film['title'])
-    else:
-        print('Sorry nothig finded')
+    return respons_dict
 
+data = get_film_id()
+print(data)
 
-get_film_id()
+dict_to_json(data)
