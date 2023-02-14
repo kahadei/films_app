@@ -4,7 +4,7 @@ import os
 
 def dict_to_json(pydict):
     try:
-        data_file = open('data.json', 'w')
+        data_file = open('../data.json', 'w')
         json.dump(pydict, data_file)
     except AttributeError as e:
         print(e)

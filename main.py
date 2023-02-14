@@ -1,8 +1,5 @@
 import requests
-import os
-from json_worker import dict_to_json, json_file_to_dict
-
-
+from myjson.json_worker import dict_to_json
 
 films = ['Spider-man: No way to home', 'Crazy Stupid Love.',
          'Die Hard',
